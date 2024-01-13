@@ -25,7 +25,7 @@ def enviar():
     db.session.add(novo_dado)
     db.session.commit()
 
-    return redirect(url_for('home'))
+    return render_template('formulario.html', nome=novo_dado.nome, mensagem=novo_dado.mensagem)
 
 if __name__ == '__main__':
     app.run(debug=True)
